@@ -24,6 +24,22 @@ Data Cleaning
 - Removed extra columns that were not related to solar power
 
 Exploratory Data Analysis (EDA)
+![Screenshot (724)](https://github.com/user-attachments/assets/5990fb08-af55-4f6d-af69-ed1733f80e6b)
+![image](https://github.com/user-attachments/assets/8d8eb163-9c71-48b1-9476-343693084a26)
+
+df_clean.groupby('Cleaning')[['ModA', 'ModB']].mean().plot(kind='bar', title='Effect of Cleaning on ModA & ModB')
+
+![image](https://github.com/user-attachments/assets/a55c7566-107b-4f5b-b3d4-079db1a2fc6a)
+
+
+import seaborn as sns
+
+corr = df_clean[['GHI', 'DNI', 'DHI', 'TModA', 'TModB']].corr()
+sns.heatmap(corr, annot=True, cmap='coolwarm')
+
+![image](https://github.com/user-attachments/assets/b7d7b507-035e-4edf-ab5d-3978d60c3445)
+
+
 
 - Found daily and hourly trends in solar output
 - Noticed that sunny days had higher power than cloudy ones
